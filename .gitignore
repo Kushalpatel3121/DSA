@@ -1,0 +1,8 @@
+# Ignore all extensionless files (compiled binaries)
+*
+!*.*
+
+# Do not ignore directories so Git can still scan them
+!*/
+
+.vscode/
