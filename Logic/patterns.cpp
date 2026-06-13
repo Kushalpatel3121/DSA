@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void pattern_1(){
@@ -210,11 +210,25 @@ void pattern_16(){
 }
 
 void pattern_17(){
+    int n=4;
     for(int i=0; i<4; i++){
-        int character = 'A';
-        for(int j=0; j<4-i-1; j++){
+        int ch = 'A';
+        for(int j=1; j<=n-i-1; j++){
             cout<<" ";
         }
+        int mid = (2*i+1)/2;
+        for(int j=1; j<=(2*i+1); j++){
+            cout<<(char) ch;
+            if(j<=mid){
+                ch++;
+            } else {
+                ch--;
+            }
+        }
+        for(int j=1; j<=n-i-1; j++){
+            cout<<" ";
+        }
+        cout<<endl;
     }
 }
 
@@ -261,7 +275,7 @@ void pattern_20(){
     for(int i=1; i<=9; i++){
         if(i<=5){
             for(int j=1; j<=i; j++){
-                cout<<"*";
+                cout<<"*" ;
             }
             for(int j=1; j<= 10-(2*i); j++){
                 cout<<" ";
@@ -298,6 +312,18 @@ void pattern_21(){
 }
 
 void pattern_22(){
+    int n=4;
+    for(int i=0; i<=2*n-2; i++){
+        for(int j=0; j<=2*n-2; j++){
+            int top = i;
+            int left = (2*n-2)-i;
+            int bottom = j;
+            int right = (2*n-2)-j;
+            int minDist = min(min(top, left), min(bottom, right));
+            cout<<n-minDist;
+        }
+        cout<<endl;
+    }
     
 }
 
@@ -334,7 +360,7 @@ int main(){
     // cout<<endl;
     // pattern_16();
     // cout<<endl;
-    // pattern_17(); // Remaining
+    // pattern_17();
     // cout<<endl;
     // pattern_18();
     // cout<<endl;
